@@ -1,0 +1,1273 @@
+{
+  "metadata": {
+    "version": "1.1",
+    "generator": "VCP.Nasdaq.Conformance.v1.1",
+    "classification": "conformance_test",
+    "production_format_compliant": true,
+    "trading_date": "2025-01-06",
+    "synthetic": true,
+    "note": "Conformance test dataset demonstrating VCP v1.1 Platinum Tier specification. Production evidence with external anchors available under NDA."
+  },
+  "policy_identification": {
+    "Version": "1.1",
+    "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+    "ConformanceTier": "PLATINUM",
+    "RegistrationPolicy": {
+      "Issuer": "VeritasChain Nasdaq Production Issuer",
+      "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+      "EffectiveDate": 1736121600000000
+    },
+    "VerificationDepth": {
+      "HashChainValidation": true,
+      "MerkleProofRequired": true,
+      "ExternalAnchorRequired": true,
+      "SignatureVerificationRequired": true
+    }
+  },
+  "events": [
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-21c0-7440-a7cf-924998626557",
+        "EventType": "INIT",
+        "TimestampISO": "2025-01-06T09:30:00.000000000Z",
+        "TimestampInt": 1736155800000000000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "EventHash": "267b57b37a038099eef3b418cace10c5a6eb2862eb700fa1c594b0d5cb756fa2",
+        "PrevHash": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "Trading session initialization for Nasdaq OUCH/ITCH",
+        "RegulatoryContext": {
+          "Jurisdiction": "US",
+          "Regulations": [
+            "SEC Rule 17a-4",
+            "FINRA Rule 4511",
+            "Reg NMS",
+            "CAT"
+          ],
+          "Regulator": "SEC/FINRA"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "fVwAEt+6ta57zn25nqypYyZ7Ss/i9QgLwvC4RRGiAfUx84DRKVSPy1Dc934tlMA8+PJH+sW5rsYqUbtpyKd6Cg=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-215c-7817-b3b9-faa60c908925",
+        "EventType": "SIG",
+        "TimestampISO": "2025-01-06T09:29:59.999900000Z",
+        "TimestampInt": 1736155799999900000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "267b57b37a038099eef3b418cace10c5a6eb2862eb700fa1c594b0d5cb756fa2",
+        "EventHash": "237674577192888b391591051d4c3f03728954cc968aad8742783d5f90669279"
+      },
+      "Trade": {
+        "Symbol": "AAPL",
+        "LocateCode": 4135,
+        "Side": "BUY",
+        "Price": 185.5,
+        "Exchange": "XNAS"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "Confidence": 0.92,
+        "DecisionReason": "Signal generated for AAPL",
+        "ModelInputs": {
+          "MarketData": "ITCH_TOTALVIEW",
+          "BookDepth": 10,
+          "FeatureCount": 64,
+          "Latency_ns": 150
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "yRLZUn1tSzgSZvxbLOOLV5Xn7ePrvPhL8ig8ZHi4O8nUsK/o51Fi/gXM0XHSTXZCn5pVfzJx63B4G1VEkjL8Bg=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-21fc-796e-96cb-c02b045bb6e9",
+        "EventType": "ORD",
+        "TimestampISO": "2025-01-06T09:30:00.000060000Z",
+        "TimestampInt": 1736155800000060000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "237674577192888b391591051d4c3f03728954cc968aad8742783d5f90669279",
+        "EventHash": "6f3bb8a08f1d05ec4789154580eec3a7a7be74d6e89ab5db636534f839f4ad57"
+      },
+      "Trade": {
+        "Symbol": "AAPL",
+        "LocateCode": 4135,
+        "ClOrdID": "AAPL20250106000001",
+        "Side": "BUY",
+        "Volume": 100.0,
+        "Price": 185.5,
+        "TimeInForce": "DAY",
+        "DisplayType": "DISPLAYED",
+        "Capacity": "PRINCIPAL",
+        "ISO": false,
+        "MinQty": 0,
+        "CrossType": "NONE"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Enter Order submitted",
+        "OUCHCorrelation": {
+          "MsgType": "O",
+          "OrderToken": "XAJI0Y6DPBHSAH",
+          "Direction": "OUTBOUND"
+        },
+        "FirmID": "[MASKED:FIRM]",
+        "Latency_ns": 850
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "c3m8K6uPId8DoFAAYNBoF4n/D0ZzttR1gmFdqLE30KwPg7wX+Na26ykFls6MbvgZh0idKixbBHUHUirD8qjxAQ=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2242-7d22-8f70-615323915a5a",
+        "EventType": "ACK",
+        "TimestampISO": "2025-01-06T09:30:00.000078500Z",
+        "TimestampInt": 1736155800000078500,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "6f3bb8a08f1d05ec4789154580eec3a7a7be74d6e89ab5db636534f839f4ad57",
+        "EventHash": "0d32f6fe11b8ce3bf049ac805e0b23ffa769a22ad7deeeebde1114d9ac994eee"
+      },
+      "Trade": {
+        "Symbol": "AAPL",
+        "LocateCode": 4135,
+        "ClOrdID": "AAPL20250106000001",
+        "BrokerOrderID": "1234567890123456",
+        "Side": "BUY",
+        "Volume": 100.0,
+        "Price": 185.5,
+        "TimeInForce": "DAY",
+        "OrderStatus": "LIVE",
+        "DisplayType": "DISPLAYED"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Accepted received",
+        "OUCHCorrelation": {
+          "MsgType": "A",
+          "OrderToken": "XAJI0Y6DPBHSAH",
+          "OrderRefNum": "7316976265679753",
+          "Direction": "INBOUND"
+        },
+        "Latency_ns": 18500
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "MR37VPHj4qei428OtJ1tJ7r40PlEW10mPmk3aQSDKtaLK7jx8h3bhEHzcjEypnEQH+nAM7cNfp9ZhG/YGf49BQ=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2292-72dc-866a-28353822718d",
+        "EventType": "EXE",
+        "TimestampISO": "2025-01-06T09:30:00.000210000Z",
+        "TimestampInt": 1736155800000210000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "0d32f6fe11b8ce3bf049ac805e0b23ffa769a22ad7deeeebde1114d9ac994eee",
+        "EventHash": "408c64bf6db1246c4378f082622844782e8b143792a080be65f9ce2fce934814"
+      },
+      "Trade": {
+        "Symbol": "AAPL",
+        "LocateCode": 4135,
+        "ClOrdID": "AAPL20250106000001",
+        "BrokerOrderID": "1234567890123456",
+        "Side": "BUY",
+        "FillQty": 100.0,
+        "FillPrice": 185.52,
+        "RemainingQty": 0.0,
+        "CumulativeQty": 100.0,
+        "AvgPrice": 185.52,
+        "LiquidityFlag": "TAKER",
+        "MatchID": "9876543210987654",
+        "ExecutionVenue": "XNAS"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Executed received - Full Fill",
+        "OUCHCorrelation": {
+          "MsgType": "E",
+          "OrderToken": "XAJI0Y6DPBHSAH",
+          "MatchNumber": "4778697387657462",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "QMle6puGasNDFK7cjGsBJpenMK2Mi8GFzni1DIMw5iH9vzVk1RXUwKRAAH0CdlhaT08bHbLVvXVyqzuP9X7XAw=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-22ec-7490-bac0-59984b6c0abe",
+        "EventType": "ORD",
+        "TimestampISO": "2025-01-06T09:30:00.000300000Z",
+        "TimestampInt": 1736155800000300000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "408c64bf6db1246c4378f082622844782e8b143792a080be65f9ce2fce934814",
+        "EventHash": "a3dd60f7d6ce5fa93ffe41be31bf276b01f9e8bd186a3ac5751cff77eb31ffb9"
+      },
+      "Trade": {
+        "Symbol": "MSFT",
+        "LocateCode": 5234,
+        "ClOrdID": "MSFT20250106000001",
+        "Side": "BUY",
+        "Volume": 500.0,
+        "Price": 378.25,
+        "TimeInForce": "DAY",
+        "DisplayType": "DISPLAYED",
+        "Capacity": "PRINCIPAL",
+        "ISO": false
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Enter Order submitted - Limit",
+        "OUCHCorrelation": {
+          "MsgType": "O",
+          "OrderToken": "HV3A3ZMF8MDD4V",
+          "Direction": "OUTBOUND"
+        },
+        "FirmID": "[MASKED:FIRM]"
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "+4uwjD3TajxFs71m2QO+gIm+hl6jdcquWLkMnjI/lfv24z1Y55dyl6F6PtygBjP1dDEUQ6gsHShOPrQJmHeGCw=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2350-7e11-a8d9-5c2cb881cda7",
+        "EventType": "ACK",
+        "TimestampISO": "2025-01-06T09:30:00.000400000Z",
+        "TimestampInt": 1736155800000400000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "a3dd60f7d6ce5fa93ffe41be31bf276b01f9e8bd186a3ac5751cff77eb31ffb9",
+        "EventHash": "620b24ca2cb4311b43e2951eefe0d971d98434ef3186da69caa6e73aed47b5f7"
+      },
+      "Trade": {
+        "Symbol": "MSFT",
+        "LocateCode": 5234,
+        "ClOrdID": "MSFT20250106000001",
+        "BrokerOrderID": "2345678901234567",
+        "Side": "BUY",
+        "Volume": 500.0,
+        "Price": 378.25,
+        "TimeInForce": "DAY",
+        "OrderStatus": "LIVE"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Accepted received",
+        "OUCHCorrelation": {
+          "MsgType": "A",
+          "OrderToken": "HV3A3ZMF8MDD4V",
+          "OrderRefNum": "1391369476535679",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "GLksPcUVAhsPxteiFSppgKKkLgH1/QTDmJ4F/qo0wt5ocE1EuBWao9XPhZEJ7N2n5DuS1z22gIk6ZOGFX/iBAA=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-23be-73d4-a46a-789ab08303c2",
+        "EventType": "PRT",
+        "TimestampISO": "2025-01-06T09:30:00.000510000Z",
+        "TimestampInt": 1736155800000510000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "620b24ca2cb4311b43e2951eefe0d971d98434ef3186da69caa6e73aed47b5f7",
+        "EventHash": "350c0c0a572786a7f59a197f13d4c113f14845f634148b4c8ca69d8159644519"
+      },
+      "Trade": {
+        "Symbol": "MSFT",
+        "LocateCode": 5234,
+        "ClOrdID": "MSFT20250106000001",
+        "BrokerOrderID": "2345678901234567",
+        "Side": "BUY",
+        "FillQty": 200.0,
+        "FillPrice": 378.25,
+        "RemainingQty": 300.0,
+        "CumulativeQty": 200.0,
+        "AvgPrice": 378.25,
+        "LiquidityFlag": "MAKER",
+        "MatchID": "8765432109876543"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Executed received - Partial Fill",
+        "OUCHCorrelation": {
+          "MsgType": "E",
+          "OrderToken": "HV3A3ZMF8MDD4V",
+          "MatchNumber": "5138131109426128",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "1MKOB4NTrv+PfjsZpI4LJZUHkSW7BqJZXs2xyVp5h/ybLrTaBmvVGkIr4G4dcrQFo5TwWy1MGV7vc7uNFa5iCQ=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2436-7ab5-9093-daa5c5139496",
+        "EventType": "EXE",
+        "TimestampISO": "2025-01-06T09:30:00.000630000Z",
+        "TimestampInt": 1736155800000630000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "350c0c0a572786a7f59a197f13d4c113f14845f634148b4c8ca69d8159644519",
+        "EventHash": "7323d40a20f7910725e13f953f9fd2cfeb1d06dcc4a315301df448902f0bdd6f"
+      },
+      "Trade": {
+        "Symbol": "MSFT",
+        "LocateCode": 5234,
+        "ClOrdID": "MSFT20250106000001",
+        "BrokerOrderID": "2345678901234567",
+        "Side": "BUY",
+        "FillQty": 300.0,
+        "FillPrice": 378.25,
+        "RemainingQty": 0.0,
+        "CumulativeQty": 500.0,
+        "AvgPrice": 378.25,
+        "LiquidityFlag": "MAKER",
+        "MatchID": "7654321098765432"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Executed received - Final Fill",
+        "OUCHCorrelation": {
+          "MsgType": "E",
+          "OrderToken": "HV3A3ZMF8MDD4V",
+          "MatchNumber": "2124334546861701",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "nWsW50ZXB+WRGdsBOnWGs1ex69FwhOfHHypZm0A/BUvvNn8b+sEFaWDQMehR6XQH8MIfCfYTkU7dItUq+PX0Bg=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-24b8-7330-9d53-68c074a233b5",
+        "EventType": "ORD",
+        "TimestampISO": "2025-01-06T09:30:00.000760000Z",
+        "TimestampInt": 1736155800000760000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "7323d40a20f7910725e13f953f9fd2cfeb1d06dcc4a315301df448902f0bdd6f",
+        "EventHash": "5148a09bdac806d3b9895a6691a6e96904beed1fe73bcd0e91df823af9b410a6"
+      },
+      "Trade": {
+        "Symbol": "GOOGL",
+        "LocateCode": 3721,
+        "ClOrdID": "GOOGL2025010600001",
+        "Side": "SELL",
+        "Volume": 50.0,
+        "Price": 175.0,
+        "TimeInForce": "DAY",
+        "DisplayType": "DISPLAYED",
+        "Capacity": "PRINCIPAL"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Enter Order submitted - VWAP",
+        "OUCHCorrelation": {
+          "MsgType": "O",
+          "OrderToken": "9NT3W5UZBIKCID",
+          "Direction": "OUTBOUND"
+        },
+        "FirmID": "[MASKED:FIRM]",
+        "AlgoType": "VWAP"
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "WL3TuQ0haJWHiJPGLSYs6W89xrKS2PKIWMfNJrojKr/U8xQOUZWMenfOHoCyqOmd8PXLIlO2XutuKjtVnyP/Dg=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2544-7cab-a29e-55f8dcd0ccc2",
+        "EventType": "ACK",
+        "TimestampISO": "2025-01-06T09:30:00.000900000Z",
+        "TimestampInt": 1736155800000900000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "5148a09bdac806d3b9895a6691a6e96904beed1fe73bcd0e91df823af9b410a6",
+        "EventHash": "b71d8f699c4ed9220db1efe21cdbd14ef7dad0d3e2d9a94ba360782858ae1b5b"
+      },
+      "Trade": {
+        "Symbol": "GOOGL",
+        "LocateCode": 3721,
+        "ClOrdID": "GOOGL2025010600001",
+        "BrokerOrderID": "3456789012345678",
+        "Side": "SELL",
+        "Volume": 50.0,
+        "Price": 175.0,
+        "OrderStatus": "LIVE"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Accepted received",
+        "OUCHCorrelation": {
+          "MsgType": "A",
+          "OrderToken": "9NT3W5UZBIKCID",
+          "OrderRefNum": "5083956746635065",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "oFX+eTeXXX85Zsc/3ZeYjG5ttHttGXAIkuB07DkGronmkJJOMaKO2LYRNb+yyMldtAzMtgoi4ZUHMcSaAWVIAw=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-25da-7644-8242-da7cd1ed3abd",
+        "EventType": "MOD",
+        "TimestampISO": "2025-01-06T09:30:01.000050000Z",
+        "TimestampInt": 1736155801000050000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "b71d8f699c4ed9220db1efe21cdbd14ef7dad0d3e2d9a94ba360782858ae1b5b",
+        "EventHash": "f5dcd6b416cf4333c64b5bfdf676ca7e6a3880c1d8dba74c2a071b52b30ceec4"
+      },
+      "Trade": {
+        "Symbol": "GOOGL",
+        "LocateCode": 3721,
+        "OriginalClOrdID": "GOOGL2025010600001",
+        "ClOrdID": "GOOGL2025010600002",
+        "Side": "SELL",
+        "Volume": 50.0,
+        "NewPrice": 174.5,
+        "TimeInForce": "DAY"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Replace Order submitted - Price improvement",
+        "OUCHCorrelation": {
+          "MsgType": "U",
+          "ExistingToken": "9NT3W5UZBIKCID",
+          "ReplacementToken": "WNNHJ7XVG0FN9X",
+          "Direction": "OUTBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "jrXHOtap89kYw6c+OuwmVTyF8o9+gq9clV2hX/qap8vKzpDvlx0sK9AR7uSK2zRFwQfmg0AMAmVPGzOsLP/LDA=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-267a-7957-ae4f-fe5a941e0aee",
+        "EventType": "MOD",
+        "TimestampISO": "2025-01-06T09:30:01.000210000Z",
+        "TimestampInt": 1736155801000210000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "f5dcd6b416cf4333c64b5bfdf676ca7e6a3880c1d8dba74c2a071b52b30ceec4",
+        "EventHash": "b4628bdb12f780e15931a09e42f29ab057d774c205004d4e013e5b2e7544c3f6"
+      },
+      "Trade": {
+        "Symbol": "GOOGL",
+        "LocateCode": 3721,
+        "ClOrdID": "GOOGL2025010600002",
+        "BrokerOrderID": "4567890123456789",
+        "Side": "SELL",
+        "Volume": 50.0,
+        "Price": 174.5,
+        "OrderStatus": "LIVE"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Replaced received",
+        "OUCHCorrelation": {
+          "MsgType": "U",
+          "OrderToken": "WNNHJ7XVG0FN9X",
+          "OrderRefNum": "2978118299730489",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "nfzJ3o9Jh/l1XNbt2FtVXXJGqMKE+T/f1MsSS1eDJzOm3D4cds1t+3CiwWAN7mVtOYiKB8FjnCCs0iRPYL12Dg=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2724-7bb8-bd3e-000f7aa3deb1",
+        "EventType": "EXE",
+        "TimestampISO": "2025-01-06T09:30:01.000380000Z",
+        "TimestampInt": 1736155801000380000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "b4628bdb12f780e15931a09e42f29ab057d774c205004d4e013e5b2e7544c3f6",
+        "EventHash": "03a8b44823dc97738944e6cadbf98f72bab11787dbd349f37d06ee6099d9428a"
+      },
+      "Trade": {
+        "Symbol": "GOOGL",
+        "LocateCode": 3721,
+        "ClOrdID": "GOOGL2025010600002",
+        "BrokerOrderID": "4567890123456789",
+        "Side": "SELL",
+        "FillQty": 50.0,
+        "FillPrice": 174.5,
+        "RemainingQty": 0.0,
+        "CumulativeQty": 50.0,
+        "AvgPrice": 174.5,
+        "LiquidityFlag": "MAKER",
+        "MatchID": "6543210987654321"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Executed received - Full Fill",
+        "OUCHCorrelation": {
+          "MsgType": "E",
+          "OrderToken": "WNNHJ7XVG0FN9X",
+          "MatchNumber": "3920881349386543",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "+KmUoYavE63QPQysXvwmPO1WfGo7m3imJkeLZ/cpdnnrJ/q4CoZyV7Ixgzm07gnZ5kPnb7WqGAQHzg/fuwbMCg=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-27d8-7982-8004-b55cb0e06887",
+        "EventType": "ORD",
+        "TimestampISO": "2025-01-06T09:30:01.000560000Z",
+        "TimestampInt": 1736155801000560000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "03a8b44823dc97738944e6cadbf98f72bab11787dbd349f37d06ee6099d9428a",
+        "EventHash": "5486118d679bcaa2a5dde484519c0558db7d1340ed1a83ff7467a6c7d14c143b"
+      },
+      "Trade": {
+        "Symbol": "AMZN",
+        "LocateCode": 2145,
+        "ClOrdID": "AMZN20250106000001",
+        "Side": "SELL_SHORT",
+        "Volume": 1000.0,
+        "Price": 185.0,
+        "TimeInForce": "DAY",
+        "DisplayType": "DISPLAYED"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Enter Order submitted - Short Sale",
+        "OUCHCorrelation": {
+          "MsgType": "O",
+          "OrderToken": "41IBLJH75LXO6Q",
+          "Direction": "OUTBOUND"
+        },
+        "FirmID": "[MASKED:FIRM]"
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "gpB+UDo658qO1Yp+Z3nSv8ahmPunanxULvwqGE/xVyrvxNy6N0YXEL0tZxA/amV47sCPFlGvtKI8g0Y0TlYwCw=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2896-7c6f-aa58-0657c44ecdbe",
+        "EventType": "REJ",
+        "TimestampISO": "2025-01-06T09:30:01.000750000Z",
+        "TimestampInt": 1736155801000750000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "5486118d679bcaa2a5dde484519c0558db7d1340ed1a83ff7467a6c7d14c143b",
+        "EventHash": "e2799256a5d923abd95c2e99c656eef7bc50f25da804a0f2d794ae992aaaf11a"
+      },
+      "Trade": {
+        "Symbol": "AMZN",
+        "LocateCode": 2145,
+        "ClOrdID": "AMZN20250106000001",
+        "Side": "SELL_SHORT",
+        "RejectionCode": "LOCATE_REQUIRED",
+        "RejectionReason": "Short sale locate not obtained"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Rejected received - Locate Required",
+        "OUCHCorrelation": {
+          "MsgType": "J",
+          "OrderToken": "41IBLJH75LXO6Q",
+          "RejectCode": "L",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "90Ssxdsz6hfKA7/i/9OPSlwKaW/VEJ9cMB+L3RZh7qC0y1Vvd7CmB9icHIqbFBA/bLMYEZcwn/ThM7I7qIshCg=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-295e-718c-a53c-482d22b333e8",
+        "EventType": "ORD",
+        "TimestampISO": "2025-01-06T09:30:01.000950000Z",
+        "TimestampInt": 1736155801000950000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "e2799256a5d923abd95c2e99c656eef7bc50f25da804a0f2d794ae992aaaf11a",
+        "EventHash": "55ce064d91a055d4eeba94fb031e79d6548bfd7ed620ff30280d7f3b8cf45887"
+      },
+      "Trade": {
+        "Symbol": "NVDA",
+        "LocateCode": 6789,
+        "ClOrdID": "NVDA20250106000001",
+        "Side": "BUY",
+        "Volume": 200.0,
+        "Price": 495.0,
+        "TimeInForce": "DAY",
+        "DisplayType": "DISPLAYED"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Enter Order submitted",
+        "OUCHCorrelation": {
+          "MsgType": "O",
+          "OrderToken": "JIUJV6OH9SDBDW",
+          "Direction": "OUTBOUND"
+        },
+        "FirmID": "[MASKED:FIRM]"
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "h5D1eWHvdRkAi3GMg/DZ3NMjdlI4VQd6axYsQqyypxLovS1UjdoDFYh6aAQxfjrYSJD9VPiUQQxSYyPUpf90Cg=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2a30-7755-b3d4-73389b69fbdf",
+        "EventType": "ACK",
+        "TimestampISO": "2025-01-06T09:30:02.000160000Z",
+        "TimestampInt": 1736155802000160000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "55ce064d91a055d4eeba94fb031e79d6548bfd7ed620ff30280d7f3b8cf45887",
+        "EventHash": "147d355f0273bdd4dde2ebd7b52a8cc012908381c5679b980f2cc73e5438383c"
+      },
+      "Trade": {
+        "Symbol": "NVDA",
+        "LocateCode": 6789,
+        "ClOrdID": "NVDA20250106000001",
+        "BrokerOrderID": "5678901234567890",
+        "Side": "BUY",
+        "Volume": 200.0,
+        "Price": 495.0,
+        "OrderStatus": "LIVE"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Accepted received",
+        "OUCHCorrelation": {
+          "MsgType": "A",
+          "OrderToken": "JIUJV6OH9SDBDW",
+          "OrderRefNum": "7129230970992268",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "ImqgG3FfuJECx3OWBGCraeKNB/3GEFSIj8Jrw2/m5wsZUHqr9x8t+4CFdNll2eUXt+Q9hbwC6wxQcXLmdnf2CQ=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2b0c-70fa-946e-fda12d54f88b",
+        "EventType": "CXL",
+        "TimestampISO": "2025-01-06T09:30:02.000380000Z",
+        "TimestampInt": 1736155802000380000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "147d355f0273bdd4dde2ebd7b52a8cc012908381c5679b980f2cc73e5438383c",
+        "EventHash": "ddd19b0548fa7eae49e6617706c5a40884828eb937f0502da35a6aef06a7021b"
+      },
+      "Trade": {
+        "Symbol": "NVDA",
+        "LocateCode": 6789,
+        "ClOrdID": "NVDA20250106CXL001",
+        "OriginalClOrdID": "NVDA20250106000001",
+        "Side": "BUY"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Cancel Order submitted - User request",
+        "OUCHCorrelation": {
+          "MsgType": "X",
+          "OrderToken": "JIUJV6OH9SDBDW",
+          "Direction": "OUTBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "cjS87x+Z89NoW6JylOsraBLWNHeQw/hCNxS1RF9wedAX1jXjUmMdwTq1K0Z5N4BzHpY6nsqJRNgfZyhZDFzMCA=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2bf2-775b-b11c-cbb5e99035b3",
+        "EventType": "CXL",
+        "TimestampISO": "2025-01-06T09:30:02.000610000Z",
+        "TimestampInt": 1736155802000610000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "ddd19b0548fa7eae49e6617706c5a40884828eb937f0502da35a6aef06a7021b",
+        "EventHash": "40186a550394e6dcdf36a480cd629cd2f44b5665379b318bd435b1b61700edf1"
+      },
+      "Trade": {
+        "Symbol": "NVDA",
+        "LocateCode": 6789,
+        "ClOrdID": "NVDA20250106000001",
+        "Side": "BUY",
+        "CancelQty": 200.0,
+        "CancelReason": "USER_CANCEL"
+      },
+      "Governance": {
+        "AlgorithmName": "NASDAQ_HFT_SUITE",
+        "AlgorithmVersion": "3.0.0",
+        "DecisionReason": "OUCH Order Canceled received - User Requested",
+        "OUCHCorrelation": {
+          "MsgType": "C",
+          "OrderToken": "JIUJV6OH9SDBDW",
+          "CancelCode": "U",
+          "Direction": "INBOUND"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "P9xqRSv8utVDrjeihk/0KA2lGMVmwxlgqObotMtj/D2nq8Bwc3DQBoh+kOmJ5+i+LCbtFWkJlg9At+DKoRACAA=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2c90-7890-9123-456789012345",
+        "EventType": "VCP_BATCH",
+        "TimestampISO": "2025-01-06T16:00:00.000000000Z",
+        "TimestampInt": 1736179200000000000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "40186a550394e6dcdf36a480cd629cd2f44b5665379b318bd435b1b61700edf1",
+        "EventHash": "62c7653c508d7710573aee3dc3a9eaa5c7ffa11def74e98dd7b5508366e1c902"
+      },
+      "Governance": {
+        "BatchID": "NASDAQ_BATCH_20250106_160000",
+        "MerkleRoot": "f234567890123456789012345678901234567890123456789012345678901567",
+        "EventCount": 22,
+        "BatchPeriod": {
+          "Start": "2025-01-06T09:30:00.000000000Z",
+          "End": "2025-01-06T16:00:00.000000000Z"
+        }
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "G2tLoaw7iiNToSsDGWp1owTBzXKWSCRkvq3M+3OpcPCZw1Zx5ZchRuAUH9WOos2kD2qjEpPMzKKD83ORs0P9Dg=="
+      }
+    },
+    {
+      "Header": {
+        "Version": "1.1",
+        "EventID": "01943af3-2d80-7abc-def0-123456789abc",
+        "EventType": "VCP_ANCHOR",
+        "TimestampISO": "2025-01-06T16:05:00.000000000Z",
+        "TimestampInt": 1736179500000000000,
+        "HashAlgo": "SHA256",
+        "SignAlgo": "ED25519",
+        "ClockSyncStatus": "PTP_LOCKED",
+        "TimestampPrecision": "NANOSECOND",
+        "PrevHash": "62c7653c508d7710573aee3dc3a9eaa5c7ffa11def74e98dd7b5508366e1c902",
+        "EventHash": "4c57eba8b8f6558ace33dad6469dbdd2ca22870466c78eb96ad07a8a7e2d6f27"
+      },
+      "Governance": {
+        "AnchorID": "NASDAQ_ANCHOR_20250106_160500",
+        "AnchorTarget": "TIMESTAMPING_AUTHORITY",
+        "AnchorTimestamp": "2025-01-06T16:05:00.000000000Z",
+        "AnchorFrequency": "INTRADAY_15MIN",
+        "MerkleRoot": "f234567890123456789012345678901234567890123456789012345678901567",
+        "EventCount": 22,
+        "BatchID": "NASDAQ_BATCH_20250106_160000"
+      },
+      "PolicyIdentification": {
+        "Version": "1.1",
+        "PolicyID": "org.veritaschain:vcp-nasdaq-production-v1",
+        "ConformanceTier": "PLATINUM",
+        "RegistrationPolicy": {
+          "Issuer": "VeritasChain Nasdaq Production Issuer",
+          "PolicyURI": "https://veritaschain.org/policies/nasdaq-production-v1",
+          "EffectiveDate": 1736121600000000
+        },
+        "VerificationDepth": {
+          "HashChainValidation": true,
+          "MerkleProofRequired": true,
+          "ExternalAnchorRequired": true,
+          "SignatureVerificationRequired": true
+        }
+      },
+      "Signature": {
+        "Algorithm": "Ed25519",
+        "KeyID": "vcp-nasdaq-platinum-2025-01",
+        "Value": "0zzmvLDHVLJyKqF6Teipd+NMNVCALabTKsRDtXOQGUpMozHLF+JLU2xZM+FcDJvFm9gK0PVghKlZXx9i/UckCQ=="
+      }
+    }
+  ]
+}

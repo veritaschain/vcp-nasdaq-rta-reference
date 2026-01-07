@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "created": "2025-01-06T16:00:00Z",
+  "description": "VCP v1.1 Nasdaq Evidence Pack - Key Manifest",
+  "signing_key": {
+    "key_id": "vcp-nasdaq-platinum-2025-01",
+    "algorithm": "Ed25519",
+    "curve": "Ed25519",
+    "key_size_bits": 256,
+    "fingerprint": {
+      "sha256": "6802ce8a2e84eac15ab90f68d93f99977b468b164da2f71551d0208d69a503fb"
+    },
+    "created": "2025-01-06T16:00:00Z",
+    "expires": "2026-01-06T16:00:00Z",
+    "status": "active",
+    "usage": [
+      "sign",
+      "verify"
+    ]
+  },
+  "key_storage": {
+    "type": "HSM",
+    "provider": "AWS CloudHSM",
+    "fips_level": "140-2 Level 3",
+    "region": "us-east-1",
+    "key_custody": "Multi-party authorization required"
+  },
+  "rotation_policy": {
+    "interval_days": 365,
+    "auto_rotate": true,
+    "advance_notice_days": 30,
+    "backup_retention_years": 7
+  },
+  "pqc_migration": {
+    "planned": true,
+    "target_algorithm": "ML-DSA-65",
+    "target_date": "2026-Q4",
+    "hybrid_mode": "Ed25519 + ML-DSA-65 parallel signatures"
+  },
+  "verification_instructions": {
+    "pem_file": "signer_ed25519_pub.pem",
+    "jwk_file": "signer_ed25519_pub.jwk",
+    "verify_command": "openssl pkeyutl -verify -pubin -inkey signer_ed25519_pub.pem -sigfile signature.bin -in message.bin"
+  }
+}

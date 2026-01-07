@@ -1,0 +1,26 @@
+{
+  "certificate_id": "VCP-CERT-BATCH-20250106-001",
+  "certificate_type": "BatchCertificate",
+  "issued_at": "2025-01-06T16:15:00Z",
+  "issuer": {
+    "organization": "VeritasChain Standards Organization",
+    "key_id": "vcp-nasdaq-platinum-2025-01"
+  },
+  "subject": {
+    "batch_id": "NASDAQ_BATCH_20250106_160000",
+    "merkle_root": "4e5b6bb94f058bb89f807a59bdd65da0b76b8c7d0c18e8134b146f942a34ed14",
+    "event_count": 22,
+    "trading_date": "2025-01-06"
+  },
+  "claims": {
+    "tier": "Platinum",
+    "protocol": "Nasdaq OUCH 5.0 / ITCH 5.0",
+    "clock_sync": "PTP_LOCKED",
+    "timestamp_precision": "NANOSECOND"
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "vcp-nasdaq-platinum-2025-01",
+    "value": "rZI+2k1d4L4EfP2n+D0BLUwMfwDQvUAm4pm6XrGNQKayH0Ql2+QyK/LZgiAED+WEwsXi640xNoXNEz4QXaIYCw=="
+  }
+}

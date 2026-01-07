@@ -1,0 +1,89 @@
+Creative Commons Attribution 4.0 International License (CC BY 4.0)
+
+VCP v1.1 Nasdaq OUCH/ITCH Evidence Pack - Production
+Copyright (c) 2025 VeritasChain Standards Organization (VSO)
+
+================================================================================
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format for any
+          purpose, even commercially.
+
+  Adapt — remix, transform, and build upon the material for any purpose, even
+          commercially.
+
+The licensor cannot revoke these freedoms as long as you follow the license
+terms.
+
+================================================================================
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, provide a link to the
+                license, and indicate if changes were made. You may do so in
+                any reasonable manner, but not in any way that suggests the
+                licensor endorses you or your use.
+
+  No additional restrictions — You may not apply legal terms or technological
+                               measures that legally restrict others from doing
+                               anything the license permits.
+
+================================================================================
+
+Notices:
+
+  You do not have to comply with the license for elements of the material in
+  the public domain or where your use is permitted by an applicable exception
+  or limitation.
+
+  No warranties are given. The license may not give you all of the permissions
+  necessary for your intended use. For example, other rights such as publicity,
+  privacy, or moral rights may limit how you use the material.
+
+================================================================================
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+================================================================================
+
+ADDITIONAL NOTES FOR THIS EVIDENCE PACK:
+
+1. PRODUCTION DATA
+   This evidence pack contains production trading data captured from live
+   trading systems for regulatory compliance and audit purposes.
+
+2. PROTOCOL SPECIFICATIONS
+   Nasdaq OUCH and ITCH protocol specifications are the property of Nasdaq,
+   Inc. This evidence pack demonstrates VCP integration with these protocols
+   but does not claim ownership of the protocol specifications themselves.
+   
+   Official Nasdaq protocol documentation:
+   - OUCH: https://www.nasdaqtrader.com/content/technicalsupport/specifications/TradingProducts/OUCH5.0.pdf
+   - ITCH: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHspecification.pdf
+
+3. TRADEMARK NOTICE
+   "Nasdaq", "OUCH", and "ITCH" are trademarks of Nasdaq, Inc.
+   "VeritasChain", "VCP", and "VC-Certified" are trademarks of
+   VeritasChain Standards Organization.
+
+4. REGULATORY COMPLIANCE
+   This evidence pack is designed to meet the requirements of:
+   - SEC Rule 17a-4 (Books and Records)
+   - FINRA Rule 4511 (General Requirements)
+   - Regulation NMS (National Market System)
+   - CAT (Consolidated Audit Trail) Reporting
+
+5. WARRANTY DISCLAIMER
+   THIS EVIDENCE PACK IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED. THE AUTHORS AND COPYRIGHT HOLDERS SHALL NOT BE LIABLE
+   FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THIS
+   MATERIAL.
+
+6. CONTACT
+   VeritasChain Standards Organization
+   Email: standards@veritaschain.org
+   Web: https://veritaschain.org
+   GitHub: https://github.com/veritaschain
+
+================================================================================

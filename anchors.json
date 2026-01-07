@@ -1,0 +1,34 @@
+{
+  "AnchorID": "NASDAQ_ANCHOR_20250106_160000",
+  "BatchID": "NASDAQ_BATCH_20250106_160000",
+  "MerkleRoot": "4e5b6bb94f058bb89f807a59bdd65da0b76b8c7d0c18e8134b146f942a34ed14",
+  "AnchorHash": "f74591ca5641eebf9c7563d97a8a575e08111ea4d726e7a968a48fe58a647a84",
+  "Timestamp": "2025-01-06T16:00:00Z",
+  "AnchorPolicy": {
+    "Frequency": "10_MINUTES",
+    "MaxInterval": "10 minutes",
+    "FailoverMax": "15 minutes"
+  },
+  "Signature": {},
+  "external_tsa": {
+    "status": "NOT_INCLUDED",
+    "note": "RFC 3161 TSA tokens available in NDA production package",
+    "nda_package_includes": [
+      "DigiCert TSA timestamp token",
+      "TSA certificate chain",
+      "External UTC time source verification"
+    ],
+    "contact": "enterprise@veritaschain.org"
+  },
+  "nasdaq_session_proof": {
+    "status": "NOT_INCLUDED",
+    "note": "Nasdaq connectivity proof available in NDA production package",
+    "nda_package_includes": [
+      "SoupBinTCP session establishment log",
+      "MPID authentication record",
+      "Port assignment confirmation",
+      "Session heartbeat sequences"
+    ],
+    "contact": "enterprise@veritaschain.org"
+  }
+}

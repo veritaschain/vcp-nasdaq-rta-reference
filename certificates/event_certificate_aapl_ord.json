@@ -1,0 +1,31 @@
+{
+  "certificate_id": "VCP-CERT-EVENT-01943af3",
+  "certificate_type": "EventCertificate",
+  "issued_at": "2025-01-06T16:15:00Z",
+  "issuer": {
+    "organization": "VeritasChain Standards Organization",
+    "key_id": "vcp-nasdaq-platinum-2025-01"
+  },
+  "subject": {
+    "event_id": "01943af3-21fc-796e-96cb-c02b045bb6e9",
+    "event_type": "ORD",
+    "event_hash": "6f3bb8a08f1d05ec4789154580eec3a7a7be74d6e89ab5db636534f839f4ad57",
+    "timestamp": "2025-01-06T09:30:00.000060000Z"
+  },
+  "inclusion_proof": {
+    "merkle_root": "4e5b6bb94f058bb89f807a59bdd65da0b76b8c7d0c18e8134b146f942a34ed14",
+    "event_index": 2,
+    "audit_path": [
+      "42f338209cd4745743454618811d325bec3b50dbe7987ed72154fd581b7258f2",
+      "2371567b623f7903b238291914e5d9cb116d62c9f5d9cb6546eeca406b654dad",
+      "980725fdb30a9467daae4bbbe92a53043673c9534fcb47936748bc88b3876233",
+      "50c89e0b5bf3c9e4e89da9a60d1523c6349f4265eb9904fa48922e9ebb6a0d5d",
+      "576d58f30e136029ed8a94b0eb4f77b0c09fc398c384d7406a654d5df40fc9c5"
+    ]
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "key_id": "vcp-nasdaq-platinum-2025-01",
+    "value": "c3m8K6uPId8DoFAAYNBoF4n/D0ZzttR1gmFdqLE30KwPg7wX+Na26ykFls6MbvgZh0idKixbBHUHUirD8qjxAQ=="
+  }
+}

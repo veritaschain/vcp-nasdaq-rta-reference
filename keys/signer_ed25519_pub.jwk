@@ -1,0 +1,7 @@
+{
+  "kty": "OKP",
+  "crv": "Ed25519",
+  "x": "Vj8MvXMffZ4cjHYID-x6YJVMPGw_j5eLyd9oBKElYFw",
+  "use": "sig",
+  "kid": "vcp-nasdaq-platinum-2025-01"
+}
