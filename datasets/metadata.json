@@ -1,22 +1,24 @@
 {
   "version": "1.0",
   "created": "2025-01-06T16:00:00Z",
-  "description": "VCP v1.1 Platinum Tier Conformance Test Dataset - Nasdaq OUCH/ITCH",
+  "description": "Historical Nasdaq OUCH/ITCH reference sample for demonstration; conformance and production provenance are not independently established.",
   "dataset": {
-    "name": "Nasdaq OUCH/ITCH Conformance Test Dataset",
+    "name": "Nasdaq OUCH/ITCH historical reference sample",
     "date": "2025-01-06",
-    "classification": "conformance_test",
-    "tier": "Platinum",
+    "classification": "demonstration",
     "trading_session": {
       "start": "2025-01-06T09:30:00-05:00",
       "end": "2025-01-06T16:00:00-05:00",
       "timezone": "America/New_York",
       "market": "Nasdaq"
     },
-    "environment": "conformance_test",
-    "synthetic": true,
-    "production_format_compliant": true,
-    "note": "This dataset demonstrates VCP specification conformance. Full production evidence with TSA anchors and Nasdaq connectivity proof available under NDA."
+    "environment": "demonstration",
+    "synthetic": null,
+    "production_format_compliant": null,
+    "note": "For reference and demonstration use. This metadata is not a conformance assessment, an external timestamp verification, or proof of Nasdaq connectivity. It makes no claim that a separate production evidence package is available.",
+    "historical_target_tier": "Platinum",
+    "synthetic_status": "UNVERIFIED; the preserved original metadata and events.json declared synthetic=true. This annotation does not independently establish how the records were produced.",
+    "production_format_status": "NOT_ESTABLISHED; the former true value was an unverified metadata assertion."
   },
   "protocols": {
     "order_entry": {
@@ -77,21 +79,25 @@
       "Cancelled"
     ]
   },
-  "cryptographic_verification": {
+  "publication_scope": {
+    "updated_on": "2026-11-02",
+    "classification": "DEMONSTRATION",
+    "historical_target": "VCP v1.1 Platinum (not a conformance result)",
+    "production_provenance": "UNVERIFIED",
+    "production_package_availability": "UNVERIFIED; no availability is represented by this distribution",
+    "third_party_attestation": "NOT_ESTABLISHED",
+    "historical_metadata": "archive/metadata.pre-2026-11-02.json",
+    "evidence_preservation": "Original events, anchors, keys, certificates and verifier reports remain unchanged; their production or conformance labels are historical assertions, not current assurance."
+  },
+  "historical_cryptographic_claims": {
     "all_signatures_verifiable": true,
     "hash_chain_complete": true,
     "merkle_proofs_included": true,
     "public_key_included": true
   },
-  "nda_package_contents": {
-    "description": "Full production evidence available under NDA",
-    "includes": [
-      "RFC 3161 TSA timestamp tokens",
-      "Nasdaq SoupBinTCP session logs",
-      "Raw PCAP wire captures",
-      "HSM key attestation certificates",
-      "Third-party audit certification"
-    ],
-    "contact": "enterprise@veritaschain.org"
+  "verification_scope": {
+    "historical_cryptographic_claims": "The preceding historical booleans are preserved assertions from the original metadata, not current verification results.",
+    "signature_math": "Any match against a bundled public key alone does not establish signer identity or key custody.",
+    "manifest": "Unsigned file checksum inventory only; it does not authenticate provenance or establish conformance."
   }
 }

@@ -1,0 +1,2 @@
+# Signature mathematics and the CLI regression suite; no signer trust is implied.
+PyNaCl==1.6.2

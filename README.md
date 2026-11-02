@@ -1,121 +1,76 @@
+> **Current distribution notice — 2 November 2026**
+>
+> This repository is distributed as a historical reference sample for demonstration. Production provenance, protocol/tier conformance, HSM custody, independent attestation, and the availability of a separate NDA package are not established by the public files. The original records declare synthetic data; that is a historical producer assertion, not an independently established provenance finding.
+>
+> The pack descriptions, policy IDs, certificates, key manifest and recorded verifier outputs contain historical claims. They are not current production assurance. See [the detailed limitations](STATUS-2026-10-25.md), including the absence of signer/key trust and external timestamp verification. The current CLI reports those gaps as `INDETERMINATE` and never reports authenticated success.
+>
+> Original metadata, README, changelog, verifier and checksum-manifest bytes are retained under [archive/](archive/). The current [hash manifest](hash_manifest.json) is a separate unsigned inventory of the current distribution, including corrected labels. It establishes file-byte consistency only; it does not authenticate origin or make a conformance finding. Event, key, anchor, certificate and historical verifier-report bytes have not been regenerated.
+
 # VCP v1.1 Nasdaq OUCH/ITCH Evidence Pack
 
-## VeritasChain Protocol v1.1 | Platinum Tier High-Frequency Trading Compliance
+## Historical target: VCP v1.1 Platinum Tier (not a conformance assessment)
 
-**Document ID**: VSO-EP-NASDAQ-001  
-**Version**: 1.0.0  
-**Date**: 2025-01-06  
-**Status**: Public Reference Implementation  
+**Document ID**: VSO-EP-NASDAQ-001
+
+**Version**: 1.0.0
+
+**Date**: 2025-01-06
+
+**Status**: Historical reference sample; current distribution is for demonstration
+
 **Maintainer**: VeritasChain Standards Organization (VSO)
 
 ---
 
 ## Document Classification
 
-**Type**: Conformance Test Dataset (Production Format Compliant)  
-**Tier**: Platinum (HFT/Exchange-Grade)  
-**Protocol**: Nasdaq OUCH 5.0 / ITCH 5.0  
-**Purpose**: VCP specification conformance demonstration
+**Type**: Historical reference sample; production format conformance not established
 
-> ⚠️ **PUBLIC REFERENCE IMPLEMENTATION**: This evidence pack is a **conformance test dataset** demonstrating VCP v1.1 Platinum Tier specification compliance for Nasdaq binary protocols. All cryptographic operations (hashes, signatures, Merkle proofs) are independently verifiable using the included public key.
+**Historical target tier**: Platinum; no tier assessment is established
 
----
+**Protocol**: Nasdaq OUCH 5.0 / ITCH 5.0
 
-## Data Classification Matrix
+**Purpose**: Inspect historical sample structures and selected consistency checks
 
-| Data Category | This Package | Full Production Package |
-|---------------|--------------|------------------------|
-| **Classification** | Conformance Test | Production Evidence |
-| **Access Level** | Public | NDA Required |
-| **Cryptographic Signatures** | ✅ Verifiable | ✅ Verifiable |
-| **Hash Chain Integrity** | ✅ Complete | ✅ Complete |
-| **Merkle Proofs** | ✅ Included | ✅ Included |
-| **RFC 3161 TSA Tokens** | ❌ Not Included | ✅ Included |
-| **Nasdaq Session Proof** | ❌ Not Included | ✅ Included |
-| **Raw Wire Captures** | ❌ Sanitized | ✅ Full PCAP |
-| **Account Identifiers** | Masked | Unmasked (encrypted) |
-| **Audit Chain of Custody** | Self-attested | Third-party attested |
+> The historical pack aimed to illustrate VCP v1.1 fields for Nasdaq binary protocols. Matching a signature to the bundled key does not establish signer identity, key custody, real exchange connectivity, or protocol conformance.
 
 ---
 
-## Production Evidence Package (NDA Required)
+## Historical production-package claims
 
-### Available Under NDA
-
-For regulatory authorities, audit firms, and qualified institutional partners, the complete production evidence package includes:
-
-#### 1. External Timestamp Authority (TSA) Anchors
-- RFC 3161 compliant timestamp tokens
-- TSA certificate chain (DigiCert / GlobalSign)
-- Verifiable external anchor to UTC time source
-
-#### 2. Nasdaq Connectivity Proof
-- SoupBinTCP session establishment logs
-- Nasdaq MPID authentication records
-- Port assignment confirmation
-- Session heartbeat sequences
-
-#### 3. Raw Protocol Captures
-- Full PCAP files with wire-level data
-- Binary OUCH/ITCH message streams
-- Network timing metadata
-- Packet sequence verification
-
-#### 4. Hardware Security Module (HSM) Attestation
-- AWS CloudHSM key attestation certificates
-- FIPS 140-2 Level 3 compliance documentation
-- Key ceremony audit logs
-- Multi-party authorization records
-
-#### 5. Third-Party Audit Trail
-- Independent verification by [Audit Partner]
-- Chain of custody documentation
-- Data integrity certification
-- Regulatory filing support materials
-
-### NDA Request Process
-
-To request access to the full production evidence package:
-
-1. **Contact**: enterprise@veritaschain.org
-2. **Subject**: "NDA Request - Nasdaq Production Evidence Pack"
-3. **Include**:
-   - Organization name and registration
-   - Regulatory status (if applicable)
-   - Intended use case
-   - Authorized signatory information
-
-**Typical NDA Terms**:
-- Data use limited to evaluation/audit purposes
-- No redistribution without written consent
-- Confidentiality obligations for 3 years
-- Right to audit data handling practices
+The original README advertised a separate NDA package containing TSA tokens,
+Nasdaq session logs, raw captures, HSM attestations and an independent audit.
+The repository does not substantiate those availability or production claims.
+They are retained only in the [original README](archive/README.pre-2026-11-02.md)
+and [original metadata](archive/metadata.pre-2026-11-02.json) as historical
+statements. No current availability assurance or NDA request process is offered
+by this distribution.
 
 ---
 
 ## Public Package Contents
 
-This public package demonstrates VCP v1.1 specification conformance:
+The public files contain historical samples and a legacy verification script. The following components can be inspected; their presence is not a conformance finding:
 
-### Cryptographically Verifiable Components
+### Components and limits
 
 | Component | Verification Method | Status |
 |-----------|---------------------|--------|
-| Event Hashes (22) | SHA-256 recomputation | ✅ Verifiable |
-| Hash Chain | PrevHash linkage | ✅ Verifiable |
-| Ed25519 Signatures | Public key verification | ✅ Verifiable |
-| Merkle Tree | RFC 6962 audit path | ✅ Verifiable |
-| File Integrity | hash_manifest.json | ✅ Verifiable |
+| Event Hashes (22) | SHA-256 recomputation | Sample consistency check |
+| Hash Chain | PrevHash linkage | Sample consistency check |
+| Ed25519 Signatures | Bundled public key | Mathematical checks do not establish identity or custody |
+| Merkle Tree | Legacy duplicated-node construction | Uses RFC 6962 hash prefixes, not its tree algorithm |
+| File Integrity | Current unsigned `hash_manifest.json` | Checks listed file bytes only |
 
 ### Included Files
 
 ```
-nasdaq_evidence_pack_v1_1_production/
+vcp-nasdaq-rta-reference/
 ├── README.md                    # This file
 ├── events.json                  # VCP events with Ed25519 signatures
 ├── events.jsonl                 # Events in JSONL format
 ├── batches.json                 # Merkle tree with inclusion proofs
-├── anchors.json                 # Anchor structure (TSA tokens in NDA package)
+├── anchors.json                 # Historical anchor metadata; no TSA proof included
 ├── ouch_messages.jsonl          # OUCH protocol messages (sanitized)
 ├── itch_messages.jsonl          # ITCH protocol messages (sanitized)
 ├── mapping.md                   # OUCH/ITCH → VCP field mapping
@@ -141,9 +96,9 @@ nasdaq_evidence_pack_v1_1_production/
 
 ---
 
-## Platinum Tier Specification Compliance
+## Historical Platinum Tier design targets
 
-This package demonstrates full VCP v1.1 Platinum Tier compliance:
+The following table records historical target metadata. A checked row is not an independently established implementation or conformance result; see the limitations above:
 
 | Requirement | Specification | Implementation | Status |
 |-------------|---------------|----------------|--------|
@@ -161,13 +116,37 @@ This package demonstrates full VCP v1.1 Platinum Tier compliance:
 ### Quick Verification
 
 ```bash
-# Run comprehensive verification
+# Install the mathematical signature checker (tested with Python 3.12)
+python -m pip install -r requirements.txt
+
+# Run local checks; the bundled sample remains INDETERMINATE, exit 2
 python verify.py --verbose
 
-# Output: All 52 checks should pass
+# Run the CLI semantics and archive/inventory regressions
+python -m unittest discover -s tests -v
 ```
 
-### Manual Signature Verification
+### Result and exit status
+
+| Result | Exit | Meaning |
+| --- | --- | --- |
+| `INVALID` | `1` | An observed local check failed, such as an event hash, signature, selected key encoding or inventory mismatch. This takes precedence over unavailable authentication. |
+| `INDETERMINATE` | `2` | Required checks or authentication are unavailable or untrusted. This includes missing PyNaCl, missing/unsupported signatures or keys, and missing required data. |
+
+There is no authenticated-success result or exit `0` in this implementation.
+Even when every Ed25519 signature mathematically matches the bundled key,
+signer identity, key trust/revocation, certificate authentication and external
+anchor verification remain unimplemented. Installing PyNaCl enables the
+mathematical checks; it does not supply those trust mechanisms. Existing local
+checks retain their legacy encoding and duplicated-node Merkle algorithm, and
+two metadata comparisons do not constitute a tier assessment.
+
+The original permissive verifier is preserved at
+[`archive/verify.pre-2026-11-02.py`](archive/verify.pre-2026-11-02.py) as historical
+source. Its former `VERIFICATION PASSED` output must not be used as a current
+verification result.
+
+### Manual signature mathematics (not authentication)
 
 ```python
 import nacl.signing
@@ -190,7 +169,7 @@ event_hash = bytes.fromhex(event['Header']['EventHash'])
 signature = base64.b64decode(event['Signature']['Value'])
 
 verify_key.verify(event_hash, signature)  # Raises if invalid
-print("✅ Signature verified")
+print("Mathematical match against the bundled key; signer trust is not established")
 ```
 
 > ⚠️ **Note**: The sample canonicalization uses `json.dumps()` for simplicity. Production implementations MUST use RFC 8785 (JSON Canonicalization Scheme) compliant libraries.
@@ -257,22 +236,35 @@ print("✅ Signature verified")
 
 ## Trust Model and Limitations
 
-### What This Package Proves
+### Historical claimed results — not established by this distribution
 
-✅ VCP v1.1 specification conformance  
-✅ Nasdaq OUCH/ITCH protocol mapping correctness  
-✅ Cryptographic signature validity (Ed25519)  
-✅ Hash chain integrity (SHA-256)  
-✅ Merkle tree construction (RFC 6962)  
-✅ Platinum Tier requirement compliance  
+✅ VCP v1.1 specification conformance
 
-### What Requires NDA Package
+✅ Nasdaq OUCH/ITCH protocol mapping correctness
 
-❌ External timestamp authority verification  
-❌ Actual Nasdaq connectivity proof  
-❌ Raw wire capture authenticity  
-❌ HSM key attestation  
-❌ Third-party audit certification  
+✅ Cryptographic signature validity (Ed25519)
+
+✅ Hash chain integrity (SHA-256)
+
+✅ Merkle tree construction (RFC 6962)
+
+✅ Platinum Tier requirement compliance
+
+
+### Evidence absent from this public distribution
+
+No assurance is made that these materials are available separately.
+
+❌ External timestamp authority verification
+
+❌ Actual Nasdaq connectivity proof
+
+❌ Raw wire capture authenticity
+
+❌ HSM key attestation
+
+❌ Third-party audit certification
+
 
 ---
 
@@ -282,7 +274,7 @@ print("✅ Signature verified")
 |---------|---------|
 | **General Inquiries** | info@veritaschain.org |
 | **Technical Support** | technical@veritaschain.org |
-| **NDA/Enterprise** | enterprise@veritaschain.org |
+| **Enterprise inquiries (no package-availability assurance)** | enterprise@veritaschain.org |
 | **Compliance** | compliance@veritaschain.org |
 | **Security Issues** | security@veritaschain.org |
 
@@ -297,10 +289,14 @@ print("✅ Signature verified")
 
 This evidence pack is provided under **CC BY 4.0** license.
 
-**Non-Endorsement Statement**: This evidence pack demonstrates VCP specification compliance only. Inclusion of Nasdaq protocol references does not imply endorsement by Nasdaq, Inc. or any regulatory authority. OUCH and ITCH are trademarks of Nasdaq, Inc.
+**Non-Endorsement Statement**: This historical reference sample makes no protocol-conformance or regulatory-compliance finding. Inclusion of Nasdaq protocol references does not imply endorsement by Nasdaq, Inc. or any regulatory authority. OUCH and ITCH are trademarks of Nasdaq, Inc.
 
 **VeritasChain Protocol** and **VCP** are trademarks of VeritasChain Standards Organization.
 
 ---
 
 *VSO-EP-NASDAQ-001 v1.0.0 | Generated by VCP.Nasdaq.Conformance.v1.1*
+
+## License scope clarification — 2 November 2026
+
+Documentation remains CC BY 4.0. First-party code, scripts, code examples and schemas additionally offer [Apache-2.0](LICENSE-CODE); existing licenses and third-party notices remain in effect. See [LICENSE](LICENSE) for the scope and preserved prior terms. This editorial licensing note does not change protocol requirements or claim conformance.
