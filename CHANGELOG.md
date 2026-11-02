@@ -1,4 +1,16 @@
+> **Historical record notice — 2 November 2026**
+>
+> The release narrative below is preserved as historical text. Its conformance, production-format, HSM/audit and NDA-package-availability statements are unverified historical claims, not current assurance. The current distribution is for demonstration and makes no claim that a separate production package is available. See [README.md](README.md) and [STATUS-2026-10-25.md](STATUS-2026-10-25.md). Original bytes are preserved in [archive/CHANGELOG.pre-2026-11-02.md](archive/CHANGELOG.pre-2026-11-02.md).
+
 # Changelog
+
+## Current verifier correction — 2 November 2026
+
+- Skipped or untrusted required authentication now returns `INDETERMINATE` / exit `2`.
+- Observed local failures, including invalid signatures, take precedence as `INVALID` / exit `1`.
+- Successful mathematical checks against the bundled key do not establish signer trust. External timestamp, certificate, key-trust and revocation verification remain unimplemented; there is no authenticated-success result.
+- The original verifier is archived unchanged, and current-file inventory and CLI regression tests cover the correction without regenerating evidence.
+
 
 All notable changes to the VCP v1.1 Nasdaq OUCH/ITCH Evidence Pack.
 

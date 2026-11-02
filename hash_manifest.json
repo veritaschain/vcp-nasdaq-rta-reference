@@ -1,61 +1,70 @@
 {
-  "version": "1.0",
+  "schema_version": "2.0",
+  "updated_on": "2026-11-02",
   "algorithm": "SHA-256",
-  "created": "2026-01-07T03:10:06.627911+00:00",
-  "description": "VCP v1.1 Nasdaq OUCH/ITCH Conformance Test Dataset - File Integrity Manifest",
-  "classification": "conformance_test",
+  "scope": "Unsigned checksum inventory of the listed current repository files; not origin, signature, anchor, conformance or production verification.",
+  "historical_manifest": "archive/hash_manifest.pre-2026-11-02.json",
+  "file_count": 34,
   "files": {
+    ".github/workflows/inventory.yml": {
+      "sha256": "b2fccd20a9f672612335b5369d7f053ad124d24a915b93428fad62d4cdb4874e",
+      "size_bytes": 531
+    },
+    "CHANGELOG.md": {
+      "sha256": "b8b33215085e34e6f2d4202617ef6b2733d10e5f6d8c4374a980f35e23b4040d",
+      "size_bytes": 4030
+    },
+    "LICENSE": {
+      "sha256": "1bf5c61caed2986732ade5bbb11c1c7e5578ab84fae90375afce28d6e0aaa81d",
+      "size_bytes": 4785
+    },
+    "LICENSE-CODE": {
+      "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+      "size_bytes": 11360
+    },
     "README.md": {
-      "sha256": "b2897feac96dea374377a1d7b65bcb4a0679ded2def03f40648310e4e867cfc2",
-      "size_bytes": 10042
+      "sha256": "e2109f5d5900bb2e60dccbe9f451e370bb8673cae5de95f7331b3ae5a4ec7ed5",
+      "size_bytes": 11905
     },
-    "mapping.md": {
-      "sha256": "32426e311330776ebffd6a38f0795346840610feef50e3cbc5328149a3e6639d",
-      "size_bytes": 17854
+    "STATUS-2026-10-25.md": {
+      "sha256": "3190e76f695e9c175eb1417bd9eaf1a78a504217abf678f63378e5d782729967",
+      "size_bytes": 4568
     },
-    "events.json": {
-      "sha256": "318a3d2cc4e5aca8a1ca0fd771c019eb60a86861133a141cf21ce7d651f1e0a0",
-      "size_bytes": 45586
-    },
-    "batches.json": {
-      "sha256": "2e495a6788530105a23fe6012b2dbd004f9083ba6de721b2f5caddcc2ddad64c",
-      "size_bytes": 3128
+    "VSO-EVIDENCE-NASDAQ-001_WorldFirst_Verification_Report.pdf": {
+      "sha256": "56fc028242869798ad90bc007d4a32cea6d2d7ac11515189f53e21e96cf07bf0",
+      "size_bytes": 27285
     },
     "anchors.json": {
       "sha256": "e56e6fb261a79defeff947b9f89d45ca6bb66681b2519dc4d5366193fe3cada5",
       "size_bytes": 1142
     },
-    "ouch_messages.jsonl": {
-      "sha256": "cde3253166c11ec9db685270fa3fcc115ad3e1625a5cc4c4eadd94b65381f761",
-      "size_bytes": 8896
-    },
-    "itch_messages.jsonl": {
-      "sha256": "2366f3dd9be4039de18330b1de37c8ffe5cc8e10d763b865068c3cbda9fa8883",
-      "size_bytes": 7239
-    },
-    "events.jsonl": {
-      "sha256": "f6d109ed0ab8cd3569ec2264a5da39def0ff83d11dbe7872ca6373017019526c",
-      "size_bytes": 32544
-    },
-    "verify.py": {
-      "sha256": "102730b1f17e1fb69b75215d4e880e9f5ba3b7983cfbecdd59c2400ed6cbee1c",
-      "size_bytes": 13164
-    },
-    "CHANGELOG.md": {
+    "archive/CHANGELOG.pre-2026-11-02.md": {
       "sha256": "b7f529758eb8e4199cbc6c601175c5130c24e9c3ccfad94a1baedf51a3b27144",
       "size_bytes": 2858
     },
-    "keys/signer_ed25519_pub.pem": {
-      "sha256": "6802ce8a2e84eac15ab90f68d93f99977b468b164da2f71551d0208d69a503fb",
-      "size_bytes": 112
+    "archive/README.md": {
+      "sha256": "20197b41a4f4b79c14f011dc58d16d57d9d5eacaf770fbfc6ef9dd868920b198",
+      "size_bytes": 1629
     },
-    "keys/signer_ed25519_pub.jwk": {
-      "sha256": "8c39762632a621536cb275ed52bf333320f41e868a3bbf4865471a682e3dde8c",
-      "size_bytes": 148
+    "archive/README.pre-2026-11-02.md": {
+      "sha256": "b2897feac96dea374377a1d7b65bcb4a0679ded2def03f40648310e4e867cfc2",
+      "size_bytes": 10042
     },
-    "keys/key_manifest.json": {
-      "sha256": "a9fb42fe02c577288e5d8698adf3e27f7b3092dece538d5143bcdbbb87a81cd5",
-      "size_bytes": 1290
+    "archive/hash_manifest.pre-2026-11-02.json": {
+      "sha256": "5930261d25d24cf2a06cbc6c2041f8bd49b37dee5eaa4b7d8b6409b86168901a",
+      "size_bytes": 2656
+    },
+    "archive/metadata.pre-2026-11-02.json": {
+      "sha256": "a8152ced25bd58333c582589f3694a405f04daf164fdd578ca30bef4de859cc5",
+      "size_bytes": 2581
+    },
+    "archive/verify.pre-2026-11-02.py": {
+      "sha256": "102730b1f17e1fb69b75215d4e880e9f5ba3b7983cfbecdd59c2400ed6cbee1c",
+      "size_bytes": 13164
+    },
+    "batches.json": {
+      "sha256": "2e495a6788530105a23fe6012b2dbd004f9083ba6de721b2f5caddcc2ddad64c",
+      "size_bytes": 3128
     },
     "certificates/batch_certificate.json": {
       "sha256": "8aaf1d9575e43faa5a69e3d4cd6c905e5bb757adc8e4598cd54812b3bd054fba",
@@ -66,9 +75,75 @@
       "size_bytes": 1220
     },
     "datasets/metadata.json": {
-      "sha256": "a8152ced25bd58333c582589f3694a405f04daf164fdd578ca30bef4de859cc5",
-      "size_bytes": 2581
+      "sha256": "d08077a436c37953fc8cff4c1868a4fc87e2fc4ebfab21eb413af35fddbb457b",
+      "size_bytes": 3770
+    },
+    "events.json": {
+      "sha256": "318a3d2cc4e5aca8a1ca0fd771c019eb60a86861133a141cf21ce7d651f1e0a0",
+      "size_bytes": 45586
+    },
+    "events.jsonl": {
+      "sha256": "f6d109ed0ab8cd3569ec2264a5da39def0ff83d11dbe7872ca6373017019526c",
+      "size_bytes": 32544
+    },
+    "examples/example_usage.py": {
+      "sha256": "01625fdc5fc399ea136753b77def6a502bf24a5de4ef0dab99d9ff32f50603ea",
+      "size_bytes": 7155
+    },
+    "itch_messages.jsonl": {
+      "sha256": "2366f3dd9be4039de18330b1de37c8ffe5cc8e10d763b865068c3cbda9fa8883",
+      "size_bytes": 7239
+    },
+    "keys/key_manifest.json": {
+      "sha256": "a9fb42fe02c577288e5d8698adf3e27f7b3092dece538d5143bcdbbb87a81cd5",
+      "size_bytes": 1290
+    },
+    "keys/signer_ed25519_pub.jwk": {
+      "sha256": "8c39762632a621536cb275ed52bf333320f41e868a3bbf4865471a682e3dde8c",
+      "size_bytes": 148
+    },
+    "keys/signer_ed25519_pub.pem": {
+      "sha256": "6802ce8a2e84eac15ab90f68d93f99977b468b164da2f71551d0208d69a503fb",
+      "size_bytes": 112
+    },
+    "mapping.md": {
+      "sha256": "32426e311330776ebffd6a38f0795346840610feef50e3cbc5328149a3e6639d",
+      "size_bytes": 17854
+    },
+    "ouch_messages.jsonl": {
+      "sha256": "cde3253166c11ec9db685270fa3fcc115ad3e1625a5cc4c4eadd94b65381f761",
+      "size_bytes": 8896
+    },
+    "requirements.txt": {
+      "sha256": "0b378100c33f9f4c28f674c6a540387027a6432e56d05d8cf5a1e80d8347c128",
+      "size_bytes": 96
+    },
+    "tests/test_current_manifest.py": {
+      "sha256": "3373eb6ee59f191929d8d226b41a6151a323364a12f79e57b2e1c129b0e93ccb",
+      "size_bytes": 2637
+    },
+    "tests/test_verifier_status.py": {
+      "sha256": "4892d0b16be28fc0500feca4295d46a1741472a5b86c32898cb8b73c27895318",
+      "size_bytes": 6631
+    },
+    "tools/update_hash_manifest.py": {
+      "sha256": "f40bf98ede66f2f28a74cdfe5816753e4f5ffda9b83e3ca5a9544a72d219bf77",
+      "size_bytes": 1579
+    },
+    "verifier_outputs/verification_report.json": {
+      "sha256": "2719314c07571fb00b725eeb04c721f17a713ef0c6fe10618d011a65f428ce36",
+      "size_bytes": 3007
+    },
+    "verifier_outputs/verification_report.txt": {
+      "sha256": "42b4dc2d53191de135b84ca140a82f6bf3470003cb7b071d257d72dc87086c35",
+      "size_bytes": 5710
+    },
+    "verify.py": {
+      "sha256": "c7c53f8af8fec534ece7c316b6d53605a5448b9706760b85f924c4edf42eefdd",
+      "size_bytes": 16821
     }
   },
-  "merkle_root": "d86f9d07641136e9af70a1dd4aff3df7b54db57909198869f367f0d47c27dd32"
+  "excluded_from_manifest": [
+    "hash_manifest.json (this file)"
+  ]
 }

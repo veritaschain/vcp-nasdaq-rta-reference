@@ -1,0 +1,97 @@
+{
+  "version": "1.0",
+  "created": "2025-01-06T16:00:00Z",
+  "description": "VCP v1.1 Platinum Tier Conformance Test Dataset - Nasdaq OUCH/ITCH",
+  "dataset": {
+    "name": "Nasdaq OUCH/ITCH Conformance Test Dataset",
+    "date": "2025-01-06",
+    "classification": "conformance_test",
+    "tier": "Platinum",
+    "trading_session": {
+      "start": "2025-01-06T09:30:00-05:00",
+      "end": "2025-01-06T16:00:00-05:00",
+      "timezone": "America/New_York",
+      "market": "Nasdaq"
+    },
+    "environment": "conformance_test",
+    "synthetic": true,
+    "production_format_compliant": true,
+    "note": "This dataset demonstrates VCP specification conformance. Full production evidence with TSA anchors and Nasdaq connectivity proof available under NDA."
+  },
+  "protocols": {
+    "order_entry": {
+      "name": "OUCH",
+      "version": "5.0",
+      "transport": "SoupBinTCP",
+      "documentation": "https://www.nasdaqtrader.com/content/technicalsupport/specifications/TradingProducts/OUCH5.0.pdf"
+    },
+    "market_data": {
+      "name": "ITCH",
+      "version": "5.0",
+      "transport": "MoldUDP64",
+      "documentation": "https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHspecification.pdf"
+    }
+  },
+  "instruments": [
+    {
+      "symbol": "AAPL",
+      "locate_code": 4135,
+      "name": "Apple Inc."
+    },
+    {
+      "symbol": "MSFT",
+      "locate_code": 5234,
+      "name": "Microsoft Corporation"
+    },
+    {
+      "symbol": "GOOGL",
+      "locate_code": 2847,
+      "name": "Alphabet Inc."
+    },
+    {
+      "symbol": "AMZN",
+      "locate_code": 1923,
+      "name": "Amazon.com Inc."
+    },
+    {
+      "symbol": "NVDA",
+      "locate_code": 6721,
+      "name": "NVIDIA Corporation"
+    }
+  ],
+  "trading_summary": {
+    "total_events": 22,
+    "order_types": [
+      "Market",
+      "Limit"
+    ],
+    "actions": [
+      "New",
+      "Replace",
+      "Cancel"
+    ],
+    "outcomes": [
+      "Filled",
+      "Partially Filled",
+      "Rejected",
+      "Cancelled"
+    ]
+  },
+  "cryptographic_verification": {
+    "all_signatures_verifiable": true,
+    "hash_chain_complete": true,
+    "merkle_proofs_included": true,
+    "public_key_included": true
+  },
+  "nda_package_contents": {
+    "description": "Full production evidence available under NDA",
+    "includes": [
+      "RFC 3161 TSA timestamp tokens",
+      "Nasdaq SoupBinTCP session logs",
+      "Raw PCAP wire captures",
+      "HSM key attestation certificates",
+      "Third-party audit certification"
+    ],
+    "contact": "enterprise@veritaschain.org"
+  }
+}
