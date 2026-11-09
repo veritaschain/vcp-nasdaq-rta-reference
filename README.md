@@ -6,6 +6,13 @@
 >
 > Original metadata, README, changelog, verifier and checksum-manifest bytes are retained under [archive/](archive/). The current [hash manifest](hash_manifest.json) is a separate unsigned inventory of the current distribution, including corrected labels. It establishes file-byte consistency only; it does not authenticate origin or make a conformance finding. Event, key, anchor, certificate and historical verifier-report bytes have not been regenerated.
 
+> **Historical assessment document — 10 November 2026**
+>
+> [VSO-EVIDENCE-NASDAQ-001_WorldFirst_Verification_Report.pdf](VSO-EVIDENCE-NASDAQ-001_WorldFirst_Verification_Report.pdf)
+> is retained as a historical document. Its filename and presence do not establish
+> "world's first" status, independent review, conformance or production readiness.
+> The current verification limits remain those stated in this README; the original PDF bytes are unchanged.
+
 # VCP v1.1 Nasdaq OUCH/ITCH Evidence Pack
 
 ## Historical target: VCP v1.1 Platinum Tier (not a conformance assessment)
