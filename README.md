@@ -217,27 +217,24 @@ print("Mathematical match against the bundled key; signer trust is not establish
 
 ---
 
-## Regulatory Framework Support
+## Regulatory relevance of the historical sample
 
-### SEC Rule 17a-4
-- Immutable hash chain architecture
-- 6-year retention capability
-- Machine-readable audit format
+The original README associated this sample with the frameworks below. These
+are topics for a deployment-specific assessment, not findings of applicability,
+recordkeeping compliance or certification. The public files cover selected
+historical sample records and local consistency checks only.
 
-### FINRA Rule 4511
-- Complete order lifecycle tracking
-- Nanosecond timestamp precision
-- Modification audit trail
+| Framework previously named | Inspectable sample feature | Limitation |
+|---|---|---|
+| SEC Rule 17a-4 | Tamper-evident hash links and machine-readable records | A hash chain does not make records immutable or establish protected retention. A configured retention period is not evidence that records have been retained for six years. |
+| FINRA Rule 4511 | Selected order lifecycle records, timestamp fields and hash links | This pack does not establish complete capture, actual clock accuracy or an operational recordkeeping system. |
+| Regulation NMS / CAT | Example order identifiers and routing-related fields | Protocol/reporting conformance, cross-venue coverage and actual regulatory submissions are not demonstrated. |
+| EU AI Act (Article 12) | A possible comparison topic for decision-record fields | This Nasdaq OUCH/ITCH sample does not establish an EU deployment, an applicable AI-system classification or Article 12 applicability. Any comparison requires a separate jurisdiction, system and use-case assessment; no EU compliance claim is made. |
 
-### Regulation NMS / CAT
-- Order routing transparency
-- Cross-venue correlation
-- Unique order identification
-
-### EU AI Act (Article 12)
-- Algorithmic decision logging
-- Traceability requirements
-- Independent verification capability
+These limits also follow the distinction between evidence production and legal
+compliance in [VAP §1.6](https://github.com/veritaschain/vap-spec/blob/1ce71a66f55d9a20728213b7c3a8bb79270ae579/spec/v1.2/VAP_Framework_Specification.md).
+Independent execution of verification software is possible, but signer trust,
+external anchoring and an independent assessment remain unestablished here.
 
 ---
 

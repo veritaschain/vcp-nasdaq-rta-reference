@@ -4,6 +4,12 @@
 
 # Changelog
 
+## Current presentation correction — 11 November 2026
+
+- Replace the remaining immutable-hash-chain and unqualified regulatory-support bullets with inspectable sample features and their limits.
+- Make the EU AI Act reference a conditional comparison topic without claiming EU applicability to the Nasdaq sample.
+- Refresh the unsigned current-file inventory. Historical archives, event/key/anchor/certificate bytes and verifier results remain unchanged.
+
 ## Current verifier correction — 2 November 2026
 
 - Skipped or untrusted required authentication now returns `INDETERMINATE` / exit `2`.
