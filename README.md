@@ -128,6 +128,7 @@ python -m pip install -r requirements.txt
 
 # Run local checks; the bundled sample remains INDETERMINATE, exit 2
 python verify.py --verbose
+python verify.py --help
 
 # Run the CLI semantics and archive/inventory regressions
 python -m unittest discover -s tests -v
@@ -140,13 +141,40 @@ python -m unittest discover -s tests -v
 | `INVALID` | `1` | An observed local check failed, such as an event hash, signature, selected key encoding or inventory mismatch. This takes precedence over unavailable authentication. |
 | `INDETERMINATE` | `2` | Required checks or authentication are unavailable or untrusted. This includes missing PyNaCl, missing/unsupported signatures or keys, and missing required data. |
 
-There is no authenticated-success result or exit `0` in this implementation.
+Verification has no authenticated-success result or exit `0` in this implementation.
 Even when every Ed25519 signature mathematically matches the bundled key,
 signer identity, key trust/revocation, certificate authentication and external
 anchor verification remain unimplemented. Installing PyNaCl enables the
 mathematical checks; it does not supply those trust mechanisms. Existing local
 checks retain their legacy encoding and duplicated-node Merkle algorithm, and
 two metadata comparisons do not constitute a tier assessment.
+
+The CLI inspects files adjacent to `verify.py` and accepts only `-v`/`--verbose`
+and `-h`/`--help`. A positional directory, unknown option or extra argument is
+rejected before verification, with exit `2`, a usage diagnostic and no
+`Overall` verdict. This prevents a supplied path from being silently ignored
+while the bundled pack is inspected. Help exits `0` without verification or a
+PyNaCl dependency warning; it is not an authenticated-success result.
+
+### JSON input correction — 15 November 2026
+
+The events file, batch file, unsigned inventory and selected JWK now reject
+duplicate object members (including escaped spellings of the same key),
+`NaN`/`Infinity` extensions, and decimal/exponent tokens whose conversion
+overflows the legacy Python floating-point representation to infinity.
+Previously the standard parser could silently discard an earlier duplicate
+member or accept a non-finite value while reporting local matches with no
+failures. These cases now produce `INVALID` / exit `1`, including when PyNaCl
+is unavailable; a malformed selected JWK does not fall back to the PEM key.
+
+Finite floating-point values and integers retain the existing legacy parsing
+and encoding. This is not exact-decimal parsing, full RFC 8785/JCS support, or a
+change to a normative protocol format. Regression controls alter temporary
+copies and update only their unsigned file inventories, so a stale checksum
+cannot mask a parser defect. The original event signatures, evidence files,
+archives and historical reports remain byte-identical. The ordinary bundled
+sample still reports `INDETERMINATE` / exit `2` with matching signature
+mathematics; signer identity and external authentication remain unestablished.
 
 The original permissive verifier is preserved at
 [`archive/verify.pre-2026-11-02.py`](archive/verify.pre-2026-11-02.py) as historical
