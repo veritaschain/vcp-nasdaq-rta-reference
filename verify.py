@@ -23,6 +23,7 @@ References:
     - RFC 8785 (JSON Canonicalization Scheme)
 """
 
+import argparse
 import json
 import hashlib
 import math
@@ -39,7 +40,6 @@ try:
     NACL_AVAILABLE = True
 except ImportError:
     NACL_AVAILABLE = False
-    print("⚠️ PyNaCl not installed. Install with: pip install pynacl")
 
 # =============================================================================
 # Configuration
@@ -345,8 +345,16 @@ def verify_platinum_requirements(events: List[dict]) -> Tuple[int, int, List[str
 # Main
 # =============================================================================
 
-def main():
-    verbose = '--verbose' in sys.argv or '-v' in sys.argv
+def main(argv=None):
+    parser = argparse.ArgumentParser(
+        description='Check the adjacent historical Nasdaq sample without establishing authentication.',
+        allow_abbrev=False)
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        help='Show local check diagnostics')
+    args = parser.parse_args(argv)
+    verbose = args.verbose
+    if not NACL_AVAILABLE:
+        print("⚠️ PyNaCl not installed. Install with: pip install pynacl")
     print('=' * 70)
     print('Historical Nasdaq Sample — Local Checks (not authenticated)')
     print('=' * 70)

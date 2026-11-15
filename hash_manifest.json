@@ -23,8 +23,8 @@
       "size_bytes": 11360
     },
     "README.md": {
-      "sha256": "3d4914444d8409caef92d0f8d9633ab5b8602c4104001d8736135066718b0d67",
-      "size_bytes": 14911
+      "sha256": "e9aac73b2b8929a6c382f07c5b0475e68c371ce1c2645f08d2509f37b787521c",
+      "size_bytes": 15400
     },
     "STATUS-2026-10-25.md": {
       "sha256": "3190e76f695e9c175eb1417bd9eaf1a78a504217abf678f63378e5d782729967",
@@ -123,8 +123,8 @@
       "size_bytes": 2637
     },
     "tests/test_verifier_status.py": {
-      "sha256": "5018fb42d641165a0f066b1d703ebeff079832412148c23dfe91fd93c03bc486",
-      "size_bytes": 10246
+      "sha256": "3e33cf28072d05631f397a7f5148a5c9bf5d72259d5488491cbe3e0e859e9307",
+      "size_bytes": 12180
     },
     "tools/update_hash_manifest.py": {
       "sha256": "ffc14ea78705ab355e24cf60377dc0c099354862893a1c3f0ace0385201f42ca",
@@ -139,8 +139,8 @@
       "size_bytes": 5710
     },
     "verify.py": {
-      "sha256": "764a7b5748b0199a472b9899f52c61ebf33b289afcfc25f1b17fe7ae404662a2",
-      "size_bytes": 17567
+      "sha256": "c5fa00a16b838e6812ba9857948bdb4362f33685eb28672cd15c432cc73ef893",
+      "size_bytes": 17922
     }
   },
   "excluded_from_manifest": [

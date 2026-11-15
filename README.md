@@ -128,6 +128,7 @@ python -m pip install -r requirements.txt
 
 # Run local checks; the bundled sample remains INDETERMINATE, exit 2
 python verify.py --verbose
+python verify.py --help
 
 # Run the CLI semantics and archive/inventory regressions
 python -m unittest discover -s tests -v
@@ -140,13 +141,20 @@ python -m unittest discover -s tests -v
 | `INVALID` | `1` | An observed local check failed, such as an event hash, signature, selected key encoding or inventory mismatch. This takes precedence over unavailable authentication. |
 | `INDETERMINATE` | `2` | Required checks or authentication are unavailable or untrusted. This includes missing PyNaCl, missing/unsupported signatures or keys, and missing required data. |
 
-There is no authenticated-success result or exit `0` in this implementation.
+Verification has no authenticated-success result or exit `0` in this implementation.
 Even when every Ed25519 signature mathematically matches the bundled key,
 signer identity, key trust/revocation, certificate authentication and external
 anchor verification remain unimplemented. Installing PyNaCl enables the
 mathematical checks; it does not supply those trust mechanisms. Existing local
 checks retain their legacy encoding and duplicated-node Merkle algorithm, and
 two metadata comparisons do not constitute a tier assessment.
+
+The CLI inspects files adjacent to `verify.py` and accepts only `-v`/`--verbose`
+and `-h`/`--help`. A positional directory, unknown option or extra argument is
+rejected before verification, with exit `2`, a usage diagnostic and no
+`Overall` verdict. This prevents a supplied path from being silently ignored
+while the bundled pack is inspected. Help exits `0` without verification or a
+PyNaCl dependency warning; it is not an authenticated-success result.
 
 ### JSON input correction — 15 November 2026
 

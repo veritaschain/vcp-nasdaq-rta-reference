@@ -52,11 +52,12 @@ class VerifierStatusTests(unittest.TestCase):
             self.inventory_entry(name)
             self.write_manifest()
 
-    def invoke(self, *, without_pynacl=False):
+    def invoke(self, *, without_pynacl=False, arguments=None):
         command = [sys.executable]
         if without_pynacl:
             command.append('-S')  # Actual missing-import path, even when CI installs PyNaCl.
-        command.extend([str(self.pack / 'verify.py'), '--verbose'])
+        command.append(str(self.pack / 'verify.py'))
+        command.extend(['--verbose'] if arguments is None else arguments)
         completed = subprocess.run(command, capture_output=True, text=True, check=False)
         self.assertNotIn('Traceback', completed.stderr)
         self.assertNotIn('VERIFICATION PASSED', completed.stdout)
@@ -206,6 +207,39 @@ class VerifierStatusTests(unittest.TestCase):
         self.assertIn('Ed25519 mathematical checks (not authentication): 22 local matches, 0 failures',
                       result.stdout)
         self.assertEqual((self.pack / name).read_bytes(), before)
+
+    def test_cli_help_does_not_verify_or_require_signature_backend(self):
+        for missing_backend in (False, True):
+            with self.subTest(without_pynacl=missing_backend):
+                command = [sys.executable]
+                if missing_backend:
+                    command.append('-S')
+                command.extend([str(self.pack / 'verify.py'), '--help'])
+                result = subprocess.run(command, capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                self.assertIn('usage:', result.stdout)
+                self.assertIn('--verbose', result.stdout)
+                self.assertNotIn('Loaded ', result.stdout)
+                self.assertNotIn('Overall:', result.stdout)
+                self.assertNotIn('PyNaCl not installed', result.stdout)
+
+    def test_cli_rejects_paths_unknown_and_abbreviated_options(self):
+        for arguments in (['uninspected-directory'], ['first', 'second'],
+                          ['--unknown'], ['--verb']):
+            with self.subTest(arguments=arguments):
+                result = self.invoke(arguments=arguments)
+                self.assertEqual(result.returncode, 2, result.stdout + result.stderr)
+                self.assertIn('usage:', result.stderr)
+                self.assertNotIn('Loaded ', result.stdout)
+                self.assertNotIn('Overall:', result.stdout)
+
+    def test_cli_supports_default_and_existing_verbosity_flags(self):
+        for arguments in ([], ['-v'], ['--verbose']):
+            with self.subTest(arguments=arguments):
+                result = self.invoke(arguments=arguments)
+                self.assert_indeterminate(result)
+                self.assertIn('Ed25519 mathematical checks (not authentication): 22 local matches, 0 failures',
+                              result.stdout)
 
 
 if __name__ == '__main__':
