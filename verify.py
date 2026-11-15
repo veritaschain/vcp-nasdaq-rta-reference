@@ -25,6 +25,7 @@ References:
 
 import json
 import hashlib
+import math
 import sys
 import base64
 from pathlib import Path
@@ -56,13 +57,34 @@ PUBLIC_KEY_PEM = EVIDENCE_PACK_DIR / "keys" / "signer_ed25519_pub.pem"
 # Helper Functions
 # =============================================================================
 
+def _unique_object(pairs: list) -> dict:
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError('duplicate JSON member: ' + key)
+        result[key] = value
+    return result
+
+
+def _reject_constant(token: str) -> None:
+    raise ValueError('non-finite JSON number: ' + token)
+
+
+def _finite_float(token: str) -> float:
+    value = float(token)
+    if not math.isfinite(value):
+        raise ValueError('non-finite JSON number after float conversion: ' + token)
+    return value
+
+
 def load_json(filepath: Path) -> dict:
-    """Load JSON file."""
+    """Read legacy JSON without silently discarding members or numeric overflow."""
     with open(filepath, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        return json.load(f, object_pairs_hook=_unique_object,
+                         parse_constant=_reject_constant, parse_float=_finite_float)
 
 def canonicalize(obj: dict) -> str:
-    """Simplified RFC 8785 canonicalization."""
+    """Preserve this sample's legacy JSON encoding; not general RFC 8785/JCS."""
     return json.dumps(obj, sort_keys=True, separators=(',', ':'), ensure_ascii=False)
 
 def compute_event_hash(event: dict) -> str:

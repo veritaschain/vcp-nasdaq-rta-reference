@@ -44,6 +44,14 @@ class VerifierStatusTests(unittest.TestCase):
         self.inventory_entry(name)
         self.write_manifest()
 
+    def rewrite_text(self, name, text):
+        (self.pack / name).write_text(text, encoding='utf-8')
+        if name != 'hash_manifest.json':
+            # The unsigned inventory describes the actual malformed bytes;
+            # these controls must fail parsing, not a stale file checksum.
+            self.inventory_entry(name)
+            self.write_manifest()
+
     def invoke(self, *, without_pynacl=False):
         command = [sys.executable]
         if without_pynacl:
@@ -141,6 +149,63 @@ class VerifierStatusTests(unittest.TestCase):
         result = self.invoke(without_pynacl=True)
         self.assert_invalid(result)
         self.assertIn('Events: malformed evidence', result.stdout)
+
+    def test_duplicate_members_are_invalid_in_every_selected_json_input(self):
+        cases = [
+            ('events.json', '"\\u0065vents":[{"discarded":"unverified record"}],',
+             'Events: malformed evidence'),
+            ('batches.json', '"MerkleRoot":"discarded root",', 'Batch: malformed evidence'),
+            ('hash_manifest.json', '"files":{"discarded":{}},', 'File inventory: malformed evidence'),
+            ('keys/signer_ed25519_pub.jwk', '"x":"discarded key",', 'Invalid public key:'),
+        ]
+        for name, prefix, diagnostic in cases:
+            original = (self.pack / name).read_text(encoding='utf-8')
+            try:
+                self.rewrite_text(name, '{' + prefix + original.lstrip()[1:])
+                for missing_backend in (False, True):
+                    with self.subTest(input=name, without_pynacl=missing_backend):
+                        result = self.invoke(without_pynacl=missing_backend)
+                        self.assert_invalid(result)
+                        self.assertIn(diagnostic, result.stdout)
+                        self.assertIn('duplicate JSON member', result.stdout)
+            finally:
+                self.rewrite_text(name, original)
+
+    def test_nonfinite_numbers_are_invalid_in_every_selected_json_input(self):
+        cases = [
+            ('events.json', 'Events: malformed evidence'),
+            ('batches.json', 'Batch: malformed evidence'),
+            ('hash_manifest.json', 'File inventory: malformed evidence'),
+            ('keys/signer_ed25519_pub.jwk', 'Invalid public key:'),
+        ]
+        for name, diagnostic in cases:
+            original = (self.pack / name).read_text(encoding='utf-8')
+            try:
+                for token in ('NaN', 'Infinity', '-Infinity', '1e400', '-1e400'):
+                    self.rewrite_text(name, '{"unused_metadata":{"number":' + token + '},'
+                                      + original.lstrip()[1:])
+                    for missing_backend in (False, True):
+                        with self.subTest(input=name, token=token, without_pynacl=missing_backend):
+                            result = self.invoke(without_pynacl=missing_backend)
+                            self.assert_invalid(result)
+                            self.assertIn(diagnostic, result.stdout)
+                            self.assertIn('non-finite JSON number', result.stdout)
+            finally:
+                self.rewrite_text(name, original)
+
+    def test_finite_metadata_preserves_mathematical_checks_and_input_bytes(self):
+        name = 'events.json'
+        original = (self.pack / name).read_text(encoding='utf-8')
+        metadata = {'price': 12.5, 'small': 1e-300, 'large': 1e300,
+                    'integer': 9007199254740993, 'text': '合成データ'}
+        self.rewrite_text(name, '{"unused_metadata":' + json.dumps(metadata)
+                          + ',' + original.lstrip()[1:])
+        before = (self.pack / name).read_bytes()
+        result = self.invoke()
+        self.assert_indeterminate(result)
+        self.assertIn('Ed25519 mathematical checks (not authentication): 22 local matches, 0 failures',
+                      result.stdout)
+        self.assertEqual((self.pack / name).read_bytes(), before)
 
 
 if __name__ == '__main__':

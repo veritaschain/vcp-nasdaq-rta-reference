@@ -148,6 +148,26 @@ mathematical checks; it does not supply those trust mechanisms. Existing local
 checks retain their legacy encoding and duplicated-node Merkle algorithm, and
 two metadata comparisons do not constitute a tier assessment.
 
+### JSON input correction — 15 November 2026
+
+The events file, batch file, unsigned inventory and selected JWK now reject
+duplicate object members (including escaped spellings of the same key),
+`NaN`/`Infinity` extensions, and decimal/exponent tokens whose conversion
+overflows the legacy Python floating-point representation to infinity.
+Previously the standard parser could silently discard an earlier duplicate
+member or accept a non-finite value while reporting local matches with no
+failures. These cases now produce `INVALID` / exit `1`, including when PyNaCl
+is unavailable; a malformed selected JWK does not fall back to the PEM key.
+
+Finite floating-point values and integers retain the existing legacy parsing
+and encoding. This is not exact-decimal parsing, full RFC 8785/JCS support, or a
+change to a normative protocol format. Regression controls alter temporary
+copies and update only their unsigned file inventories, so a stale checksum
+cannot mask a parser defect. The original event signatures, evidence files,
+archives and historical reports remain byte-identical. The ordinary bundled
+sample still reports `INDETERMINATE` / exit `2` with matching signature
+mathematics; signer identity and external authentication remain unestablished.
+
 The original permissive verifier is preserved at
 [`archive/verify.pre-2026-11-02.py`](archive/verify.pre-2026-11-02.py) as historical
 source. Its former `VERIFICATION PASSED` output must not be used as a current
